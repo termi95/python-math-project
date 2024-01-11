@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-white scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/python-logo.png')}}">
+    <title>Python - projekt</title>
+    <meta name="theme-color" content="#1f2937" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .fade-out {
+          animation: fadeOut 4s ease-in-out;
+        }
+      }
+    </style>
+    {% block head%}{% endblock %}
+  </head>
+  <body class="h-full">
+    {% block body%}{% endblock %}
+
+    <script>
+      const element = document.getElementById('notification');
+    
+      element.addEventListener('animationend', () => {
+        element.remove();
+      });
+    </script>
+  </body>
+</html>
