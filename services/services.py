@@ -112,6 +112,7 @@ def plot_intersection_dot(intersection_point: Point):
 def get_chart_with_info(line1: Line, line2: Line):
     data = {}
     isIntersect = False
+    plt.figure()
     if do_intersect(line1, line2):
         isIntersect = True
         intersection_point = get_intersection_point(line1, line2)
