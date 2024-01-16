@@ -1,77 +1,93 @@
 {% extends 'base.html' %}
 {% block head %}
-  <title>Login</title>
+  <title>Zadanko</title>
 {% endblock %}
 {% block body %}
-  <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-    <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-      <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Zadanko</h2>
-      <p class="mt-2 text-lg leading-8 text-gray-600">Jakiś sobie tekstik</p>
-    </div>
-    <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
-      <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-        <div>
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Start X</label>
-          <div class="mt-2.5">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        
-        <div>
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Start Y</label>
-          <div class="mt-2.5">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">End X</label>
-          <div class="mt-2.5">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        
-        <div>
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">End Y</label>
-          <div class="mt-2.5">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-      </div>
-      <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mt-20">
-        <div>
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Start X</label>
-          <div class="mt-2.5">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        
-        <div>
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Start Y</label>
-          <div class="mt-2.5">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">End X</label>
-          <div class="mt-2.5">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        
-        <div>
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">End Y</label>
-          <div class="mt-2.5">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-10">
-        <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">DO IT!</button>
-      </div>
-    </form>
+<div class="isolate bg-white px-6 lg:px-8">
+  <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+    <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#005C97] to-[#363795] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
   </div>
+
+  <div class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Tworzenie pierwszego odcinka</h2>
+            <p class="mt-4 leading-7 text-gray-600">Tworząc pierwszy odcinek, należy wprowadzić współrzędne początkowe: (X1, Y1) oraz końcowe: (X2, Y2).</p>
+          </div>
+          
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="FirstStartX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="FirstStartX" id="FirstStartX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="FirstStartY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="FirstStartY" id="FirstStartY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="FirstEndX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="FirstEndX" id="FirstEndX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="FirstEndY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="FirstEndY" id="FirstEndY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Tworzenie drugiego odcinka</h2>
+            <p class="mt-4 leading-7 text-gray-600">Konstruując kolejny odcinek, również najeży podać współrzędne początkowe: (X1, Y1) oraz końcowe: (X2, Y2).</p>
+          </div>
+          
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="SecondStartX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="SecondStartX" id="SecondStartX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="SecondStartY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="SecondStartY" id="SecondStartY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="SecondEndX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="SecondEndX" id="SecondEndX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+            <div class="rounded-2xl bg-gray-50 p-10">
+              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
+              <div class="mt-3">
+                <label for="SecondEndY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
+                <input name="SecondEndY" id="SecondEndY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock%}
