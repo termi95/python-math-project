@@ -87,7 +87,45 @@
           </div>
         </div>
       </div>
+      
+      <buton onclick="submit()" class="mt-20 cursor-pointer block w-full rounded-md bg-sky-600 px-3.5 py-2.5 text-center text-md font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Submit</buton>
     </div>
   </div>
 </div>
+
+<script>
+  function submit() {
+    const FirstStartX = document.getElementsByName('FirstStartX')[0].value
+    const FirstStartY = document.getElementsByName('FirstStartY')[0].value
+    const FirstEndX = document.getElementsByName('FirstEndX')[0].value
+    const FirstEndY = document.getElementsByName('FirstEndY')[0].value
+
+    const SecondStartX = document.getElementsByName('SecondStartX')[0].value
+    const SecondStartY = document.getElementsByName('SecondStartY')[0].value
+    const SecondEndX = document.getElementsByName('SecondEndX')[0].value
+    const SecondEndY = document.getElementsByName('SecondEndY')[0].value
+    
+    fetch("{{base_url}}/get-chart", {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "lines": [
+        {
+          "start": {"x": FirstStartX , "y": FirstStartY},
+          "end": {"x": FirstEndX, "y": FirstEndY}
+        },
+        {
+          "start": {"x": SecondStartX, "y": SecondStartY},
+          "end": {"x": SecondEndX, "y": SecondEndY}
+        }
+      ]
+    })
+})
+   .then(response => response.json())
+   .then(response => console.log(JSON.stringify(response)))
+}
+</script>
 {% endblock%}

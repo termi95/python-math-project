@@ -19,7 +19,7 @@ def is_float(value):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", base_url = base_url)
 
 
 @app.route("/get-chart", methods=["POST"])
