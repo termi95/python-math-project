@@ -7,33 +7,9 @@
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/python-logo.png')}}">
     <title>Python - projekt</title>
     <meta name="theme-color" content="#1f2937" />
-    <style type="text/tailwindcss">
-      @layer utilities {
-        @keyframes fadeOut {
-          0% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-
-        .fade-out {
-          animation: fadeOut 4s ease-in-out;
-        }
-      }
-    </style>
     {% block head%}{% endblock %}
   </head>
   <body class="h-full">
     {% block body%}{% endblock %}
-
-    <script>
-      const element = document.getElementById('notification');
-    
-      element.addEventListener('animationend', () => {
-        element.remove();
-      });
-    </script>
   </body>
 </html>

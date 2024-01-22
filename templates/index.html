@@ -1,97 +1,224 @@
 {% extends 'base.html' %}
-{% block head %}
-  <title>Zadanko</title>
-{% endblock %}
 {% block body %}
-<div class="isolate bg-white px-6 lg:px-8">
-  <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-    <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#005C97] to-[#363795] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-  </div>
-
-  <div class="py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
-          <div>
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Tworzenie pierwszego odcinka</h2>
-            <p class="mt-4 leading-7 text-gray-600">Tworząc pierwszy odcinek, należy wprowadzić współrzędne początkowe: (X1, Y1) oraz końcowe: (X2, Y2).</p>
-          </div>
-          
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="FirstStartX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="FirstStartX" id="FirstStartX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="FirstStartY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="FirstStartY" id="FirstStartY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="FirstEndX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="FirstEndX" id="FirstEndX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="FirstEndY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="FirstEndY" id="FirstEndY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
-          <div>
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900">Tworzenie drugiego odcinka</h2>
-            <p class="mt-4 leading-7 text-gray-600">Konstruując kolejny odcinek, również najeży podać współrzędne początkowe: (X1, Y1) oraz końcowe: (X2, Y2).</p>
-          </div>
-          
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="SecondStartX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="SecondStartX" id="SecondStartX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="SecondStartY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="SecondStartY" id="SecondStartY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="SecondEndX" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="SecondEndX" id="SecondEndX" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">Los Angeles</h3>
-              <div class="mt-3">
-                <label for="SecondEndY" class="mt-3 space-y-1 text-sm not-italic leading-6 text-gray-600">4556 Brendan Ferry</label>
-                <input name="SecondEndY" id="SecondEndY" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6">
-              </div>
+<div class="bg-white">
+  <div class="relative isolate overflow-hidden bg-gradient-to-b from-blue-100/20">
+    <div class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="px-6 lg:px-0 lg:pt-4">
+        <div class="mx-auto max-w-2xl">
+          <div class="max-w-lg">
+            <img class="h-20" src="{{url_for('static', filename='assets/merito-logo.jpg')}}" alt="WSB Merito logo">
+            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Przecięcie dwóch osi</h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+            </p>
+            <div class="mt-10 flex items-center gap-x-6">
+              <a href="#inputs" class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm
+                hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                focus-visible:outline-blue-600">Sprawdź zadanie
+              </a>
+              <a href="https://github.com/termi95/python-math-project" target="_blank"
+                class="text-sm font-semibold leading-6 text-gray-900">Zobacz na github <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      
-      <buton onclick="submit()" class="mt-20 cursor-pointer block w-full rounded-md bg-sky-600 px-3.5 py-2.5 text-center text-md font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">Submit</buton>
+      <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen ">
+        <div class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl
+          shadow-blue-600/10 ring-1 ring-blue-50 md:-mr-20 lg:-mr-36" aria-hidden="true">
+        </div>
+        <div class="shadow-lg md:rounded-3xl">
+          <div class="bg-blue-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
+            <div class="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-blue-100 opacity-20
+              ring-1 ring-inset ring-white md:ml-20 lg:ml-36" aria-hidden="true">
+            </div>
+            <div class="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
+              <div class="mx-auto max-w-2xl md:mx-0 md:max-w-none">
+                <div class="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
+                  <div class="flex bg-gray-800/40 ring-1 ring-white/5">
+                    <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
+                      <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">services.py</div>
+                      <div class="border-r border-gray-600/10 px-4 py-2">script.js</div>
+                    </div>
+                  </div>
+                  <div class="px-6 pb-7 pt-6 text-white relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-800"></div>
+                    import base64<br>
+                    import io<br>
+                    import matplotlib<br>
+                    matplotlib.use("Agg")<br>
+                    import matplotlib.pyplot as plt<br>
+                    from model.model import Line, Point<br>
+                    import json<br><br>
+                    
+                    
+                    def orientation(p: Point, q: Point, r: Point):<br>
+                    &emsp;val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y)<br><br>
+                    &emsp;if val == 0:<br>
+                    &emsp;&emsp;return 0<br>
+                            &emsp;return 1 if val > 0 else 2<br><br>
+                    
+                    
+                    def on_segment(p: Point, q: Point, r: Point):<br>
+                    &emsp;return (<br>
+                    &emsp;&emsp; q.x <= max(p.x, r.x)<br>
+                    &emsp;&emsp; and q.x >= min(p.x, r.x)<br>
+                    &emsp;&emsp;and q.y <= max(p.y, r.y)<br>
+                    &emsp;&emsp;and q.y >= min(p.y, r.y)<br>
+                    )
+                  </div>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 md:rounded-3xl" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"></div>
   </div>
 </div>
+
+<div id="inputs" class="flow-root max-w-4xl mx-auto px-6">
+  <ul role="list" class="-mb-8">
+    <li>
+      <div class="relative pb-8">
+        <span class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+        <div class="relative flex space-x-3">
+          <div>
+            <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+            <div>
+              <p class="text-sm text-gray-500">Wpisanie współrzędnych <strong>pierwszej</strong> linii</p>
+            </div>
+            <div class="whitespace-nowrap text-right text-sm text-gray-500">
+              <p>Krok 1</p>
+            </div>
+          </div>
+        </div>
+        <div class="pl-10 grid grid-cols-2 gap-x-10 gap-y-4 mx-10 my-4">
+          <div class="isolate -space-y-px rounded-md shadow-sm">
+            <div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="FirstStartX" class="block text-xs font-medium text-gray-900">Start X</label>
+              <input type="number" name="FirstStartX" id="FirstStartX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Jane Smith">
+            </div>
+            <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="FirstStartY" class="block text-xs font-medium text-gray-900">Start Y</label>
+              <input type="number" name="FirstStartY" id="FirstStartY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Head of Tomfoolery">
+            </div>
+          </div>
+          <div class="isolate -space-y-px rounded-md shadow-sm">
+            <div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="FirstEndX" class="block text-xs font-medium text-gray-900">Enx X</label>
+              <input type="number" name="FirstEndX" id="FirstEndX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Jane Smith">
+            </div>
+            <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="FirstEndY" class="block text-xs font-medium text-gray-900">End Y</label>
+              <input type="number" name="FirstEndY" id="FirstEndY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Head of Tomfoolery">
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="relative pb-8">
+        <span class="absolute left-4 top-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+        <div class="relative flex space-x-3">
+          <div>
+            <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+            <div>
+              <p class="text-sm text-gray-500">Wpisanie współrzędnych <strong>drugiej</strong> linii</p>
+            </div>
+            <div class="whitespace-nowrap text-right text-sm text-gray-500">
+              <p>Krok 2</p>
+            </div>
+          </div>
+        </div>
+        <div class="pl-10 grid grid-cols-2 gap-x-10 gap-y-4 mx-10 my-4">
+          <div class="isolate -space-y-px rounded-md shadow-sm">
+            <div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="SecondStartX" class="block text-xs font-medium text-gray-900">Start X</label>
+              <input type="number" name="SecondStartX" id="SecondStartX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Jane Smith">
+            </div>
+            <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="SecondStartY" class="block text-xs font-medium text-gray-900">Start Y</label>
+              <input type="number" name="SecondStartY" id="SecondStartY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Head of Tomfoolery">
+            </div>
+          </div>
+          <div class="isolate -space-y-px rounded-md shadow-sm">
+            <div class="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="SecondEndX" class="block text-xs font-medium text-gray-900">End X</label>
+              <input type="number" name="SecondEndX" id="SecondEndX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Jane Smith">
+            </div>
+            <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
+              focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
+              <label for="SecondEndY" class="block text-xs font-medium text-gray-900">End Y</label>
+              <input type="number" name="SecondEndY" id="SecondEndY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                placeholder="Head of Tomfoolery">
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="relative pb-8">
+        
+        <div class="relative flex space-x-3">
+          <div>
+            <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+            <div>
+              <p class="text-sm text-gray-500"><strong>Zatwierdź</strong> wpisane dane</p>
+            </div>
+            <div class="whitespace-nowrap text-right text-sm text-gray-500">
+              <p>Krok 3</p>
+            </div>
+          </div>
+        </div>
+        <div class="pl-10 grid grid-cols-1 gap-x-10 gap-y-4 mx-10 my-4">
+          <button onclick="submit()" class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white
+            shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+            focus-visible:outline-blue-600">Narysuj wykres &emsp;&darr;
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+
 
 <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-7 xl:col-start-7 ">
   <div class="overflow-hidden rounded-lg">
