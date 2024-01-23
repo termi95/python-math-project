@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
+{% include 'topbutton.html' %}
 
 <!-- SEKCJA 1 -->
 
@@ -112,13 +113,13 @@
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="FirstStartX" class="block text-xs font-medium text-gray-900">Start X</label>
               <input type="number" name="FirstStartX" id="FirstStartX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Jane Smith">
+                placeholder="4">
             </div>
             <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="FirstStartY" class="block text-xs font-medium text-gray-900">Start Y</label>
               <input type="number" name="FirstStartY" id="FirstStartY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Head of Tomfoolery">
+                placeholder="9">
             </div>
           </div>
           <div class="isolate -space-y-px rounded-md shadow-sm">
@@ -126,13 +127,13 @@
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="FirstEndX" class="block text-xs font-medium text-gray-900">Enx X</label>
               <input type="number" name="FirstEndX" id="FirstEndX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Jane Smith">
+                placeholder="12">
             </div>
             <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="FirstEndY" class="block text-xs font-medium text-gray-900">End Y</label>
               <input type="number" name="FirstEndY" id="FirstEndY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Head of Tomfoolery">
+                placeholder="18">
             </div>
           </div>
         </div>
@@ -164,13 +165,13 @@
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="SecondStartX" class="block text-xs font-medium text-gray-900">Start X</label>
               <input type="number" name="SecondStartX" id="SecondStartX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Jane Smith">
+                placeholder="20">
             </div>
             <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="SecondStartY" class="block text-xs font-medium text-gray-900">Start Y</label>
               <input type="number" name="SecondStartY" id="SecondStartY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Head of Tomfoolery">
+                placeholder="15">
             </div>
           </div>
           <div class="isolate -space-y-px rounded-md shadow-sm">
@@ -178,13 +179,13 @@
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="SecondEndX" class="block text-xs font-medium text-gray-900">End X</label>
               <input type="number" name="SecondEndX" id="SecondEndX" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Jane Smith">
+                placeholder="3">
             </div>
             <div class="relative rounded-md rounded-t-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300
               focus-within:z-10 focus-within:ring-2 focus-within:ring-sky-600">
               <label for="SecondEndY" class="block text-xs font-medium text-gray-900">End Y</label>
               <input type="number" name="SecondEndY" id="SecondEndY" class="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                placeholder="Head of Tomfoolery">
+                placeholder="8">
             </div>
           </div>
         </div>
@@ -223,90 +224,40 @@
 
 <!-- SEKCJA 3 -->
 
-<div class="max-w-screen-2xl mx-auto w-11/12 mt-5">
+<div id="lastSection" class="max-w-screen-2xl mx-auto w-11/12 my-20 hidden">
   <div class="flex lg:flex-row lg:justify-around flex-col gap-5">
     <!-- Left side -->
-    <div class="shadow-2xl lg:sticky lg:top-28 flex mx-auto relative w-fit h-fit">
+    <div class="shadow-xl lg:sticky lg:top-[30vh] flex mx-auto relative w-fit h-fit">
       <img name="chart" src="" alt="chart" class="pointer-events-none shadow-md hover:cursor-none max-h-[85vh] object-contain hidden">
     </div>
 
     <!-- Right side -->
-    <div class="lg:w-1/2 px-2 flex flex-col justify-center items-center h-[150vh]">
-      <div class="mt-4">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-700 sm:text-4xl">Wykres</h1>
-      </div>
-
-      <section aria-labelledby="information-heading" class="mt-4">
-        <h2 id="information-heading" class="sr-only">Product information</h2>
-
-        <div class="flex items-center">
-          <p class="text-lg text-gray-700 sm:text-xl">3224</p>
+    <div class="lg:w-1/2 px-2 flex flex-col justify-center items-center my-20">
+      <div class="mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-3 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
+        <div class="flex flex-col">
+          <div class="mt-4">
+            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Analiza danych</h1>
+            <p class="mt-2 text-sm text-gray-500">Punkt przecięcia wykresu</p>
+          </div>
         </div>
 
-        <div class="mt-4 space-y-6">
-          <p class="text-base text-gray-500">Don&#039;t compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.</p>
+        <!-- do powielania -->
+        <div class="mt-10 border-t border-gray-200 pt-10">
+          <h3 class="text-sm font-medium text-gray-900">Współrzędnie odcinków</h3>
+          <div class="prose prose-sm mt-4 text-gray-500">
+            <ul role="list">
+              <li>Odcinek pierwszy: </li>
+              <li>Odcinek drugi: </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="mt-6 flex items-center">
-          <svg class="h-5 w-5 flex-shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-          </svg>
-          <p class="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
-        </div>
-      </section>
-
-      <fieldset class="mt-10">
-        <legend class="block text-sm font-medium text-gray-700">Size</legend>
-
-        <div class="mt-1 gap-4 flex flex-row flex-wrap items-center justify-center">
-          <input id="one" type="radio" name="size-choice" checked class="peer/one hidden">
-          <label for="one" class="cursor-pointer rounded-lg border-2 flex-grow text-center
-            border-gray-300 p-4 focus:outline-none peer-checked/one:ring-2
-            peer-checked/one:ring-blue-500 peer-checked/one:border-blue-700 divide-y">
-              <p class="text-base py-2 font-medium text-gray-700 flex justify-center items-center gap-5">
-                <svg fill="#000000" viewBox="0 0 24 24" class="w-10 h-10 -rotate-90"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6,4.70710678 L3.85355339,6.85355339 C3.65829124,7.04881554 3.34170876,7.04881554 3.14644661,6.85355339 C2.95118446,6.65829124 2.95118446,6.34170876 3.14644661,6.14644661 L6.14644661,3.14644661 C6.34170876,2.95118446 6.65829124,2.95118446 6.85355339,3.14644661 L9.85355339,6.14644661 C10.0488155,6.34170876 10.0488155,6.65829124 9.85355339,6.85355339 C9.65829124,7.04881554 9.34170876,7.04881554 9.14644661,6.85355339 L7,4.70710678 L7,19.2928932 L9.14644661,17.1464466 C9.34170876,16.9511845 9.65829124,16.9511845 9.85355339,17.1464466 C10.0488155,17.3417088 10.0488155,17.6582912 9.85355339,17.8535534 L6.85355339,20.8535534 C6.65829124,21.0488155 6.34170876,21.0488155 6.14644661,20.8535534 L3.14644661,17.8535534 C2.95118446,17.6582912 2.95118446,17.3417088 3.14644661,17.1464466 C3.34170876,16.9511845 3.65829124,16.9511845 3.85355339,17.1464466 L6,19.2928932 L6,4.70710678 Z M18.5,3 C19.8807119,3 21,4.11928813 21,5.5 L21,18.5 C21,19.8807119 19.8807119,21 18.5,21 L15.5,21 C14.1192881,21 13,19.8807119 13,18.5 L13,5.5 C13,4.11928813 14.1192881,3 15.5,3 L18.5,3 Z M18.5,4 L15.5,4 C14.6715729,4 14,4.67157288 14,5.5 L14,18.5 C14,19.3284271 14.6715729,20 15.5,20 L18.5,20 C19.3284271,20 20,19.3284271 20,18.5 L20,5.5 C20,4.67157288 19.3284271,4 18.5,4 Z"></path> </g></svg>
-                150cm <span class="text-gray-500 text-sm font-light">(250dots)</span>
-              </p>
-              <p class="text-base py-2 font-medium text-gray-700 flex justify-center items-center gap-5">
-                <svg fill="#000000" viewBox="0 0 24 24" class="w-10 h-10"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6,4.70710678 L3.85355339,6.85355339 C3.65829124,7.04881554 3.34170876,7.04881554 3.14644661,6.85355339 C2.95118446,6.65829124 2.95118446,6.34170876 3.14644661,6.14644661 L6.14644661,3.14644661 C6.34170876,2.95118446 6.65829124,2.95118446 6.85355339,3.14644661 L9.85355339,6.14644661 C10.0488155,6.34170876 10.0488155,6.65829124 9.85355339,6.85355339 C9.65829124,7.04881554 9.34170876,7.04881554 9.14644661,6.85355339 L7,4.70710678 L7,19.2928932 L9.14644661,17.1464466 C9.34170876,16.9511845 9.65829124,16.9511845 9.85355339,17.1464466 C10.0488155,17.3417088 10.0488155,17.6582912 9.85355339,17.8535534 L6.85355339,20.8535534 C6.65829124,21.0488155 6.34170876,21.0488155 6.14644661,20.8535534 L3.14644661,17.8535534 C2.95118446,17.6582912 2.95118446,17.3417088 3.14644661,17.1464466 C3.34170876,16.9511845 3.65829124,16.9511845 3.85355339,17.1464466 L6,19.2928932 L6,4.70710678 Z M18.5,3 C19.8807119,3 21,4.11928813 21,5.5 L21,18.5 C21,19.8807119 19.8807119,21 18.5,21 L15.5,21 C14.1192881,21 13,19.8807119 13,18.5 L13,5.5 C13,4.11928813 14.1192881,3 15.5,3 L18.5,3 Z M18.5,4 L15.5,4 C14.6715729,4 14,4.67157288 14,5.5 L14,18.5 C14,19.3284271 14.6715729,20 15.5,20 L18.5,20 C19.3284271,20 20,19.3284271 20,18.5 L20,5.5 C20,4.67157288 19.3284271,4 18.5,4 Z"></path> </g></svg>
-                150cm <span class="text-gray-500 text-sm font-light">(250dots)</span>
-              </p>
-          </label>
-
-          <input id="two" type="radio" name="size-choice" class="peer/two hidden">
-          <label for="two" class="cursor-pointer rounded-lg border-2 flex-grow text-center
-            border-gray-300 p-4 focus:outline-none peer-checked/two:ring-2
-            peer-checked/two:ring-blue-500 peer-checked/two:border-blue-700 divide-y">
-              <p class="text-base py-2 font-medium text-gray-700 flex justify-center items-center gap-5">
-                <svg fill="#000000" viewBox="0 0 24 24" class="w-10 h-10 -rotate-90"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6,4.70710678 L3.85355339,6.85355339 C3.65829124,7.04881554 3.34170876,7.04881554 3.14644661,6.85355339 C2.95118446,6.65829124 2.95118446,6.34170876 3.14644661,6.14644661 L6.14644661,3.14644661 C6.34170876,2.95118446 6.65829124,2.95118446 6.85355339,3.14644661 L9.85355339,6.14644661 C10.0488155,6.34170876 10.0488155,6.65829124 9.85355339,6.85355339 C9.65829124,7.04881554 9.34170876,7.04881554 9.14644661,6.85355339 L7,4.70710678 L7,19.2928932 L9.14644661,17.1464466 C9.34170876,16.9511845 9.65829124,16.9511845 9.85355339,17.1464466 C10.0488155,17.3417088 10.0488155,17.6582912 9.85355339,17.8535534 L6.85355339,20.8535534 C6.65829124,21.0488155 6.34170876,21.0488155 6.14644661,20.8535534 L3.14644661,17.8535534 C2.95118446,17.6582912 2.95118446,17.3417088 3.14644661,17.1464466 C3.34170876,16.9511845 3.65829124,16.9511845 3.85355339,17.1464466 L6,19.2928932 L6,4.70710678 Z M18.5,3 C19.8807119,3 21,4.11928813 21,5.5 L21,18.5 C21,19.8807119 19.8807119,21 18.5,21 L15.5,21 C14.1192881,21 13,19.8807119 13,18.5 L13,5.5 C13,4.11928813 14.1192881,3 15.5,3 L18.5,3 Z M18.5,4 L15.5,4 C14.6715729,4 14,4.67157288 14,5.5 L14,18.5 C14,19.3284271 14.6715729,20 15.5,20 L18.5,20 C19.3284271,20 20,19.3284271 20,18.5 L20,5.5 C20,4.67157288 19.3284271,4 18.5,4 Z"></path> </g></svg>
-                250cm <span class="text-gray-500 text-sm font-light">(250dots)</span>
-              </p>
-              <p class="text-base py-2 font-medium text-gray-700 flex justify-center items-center gap-5">
-                <svg fill="#000000" viewBox="0 0 24 24" class="w-10 h-10"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6,4.70710678 L3.85355339,6.85355339 C3.65829124,7.04881554 3.34170876,7.04881554 3.14644661,6.85355339 C2.95118446,6.65829124 2.95118446,6.34170876 3.14644661,6.14644661 L6.14644661,3.14644661 C6.34170876,2.95118446 6.65829124,2.95118446 6.85355339,3.14644661 L9.85355339,6.14644661 C10.0488155,6.34170876 10.0488155,6.65829124 9.85355339,6.85355339 C9.65829124,7.04881554 9.34170876,7.04881554 9.14644661,6.85355339 L7,4.70710678 L7,19.2928932 L9.14644661,17.1464466 C9.34170876,16.9511845 9.65829124,16.9511845 9.85355339,17.1464466 C10.0488155,17.3417088 10.0488155,17.6582912 9.85355339,17.8535534 L6.85355339,20.8535534 C6.65829124,21.0488155 6.34170876,21.0488155 6.14644661,20.8535534 L3.14644661,17.8535534 C2.95118446,17.6582912 2.95118446,17.3417088 3.14644661,17.1464466 C3.34170876,16.9511845 3.65829124,16.9511845 3.85355339,17.1464466 L6,19.2928932 L6,4.70710678 Z M18.5,3 C19.8807119,3 21,4.11928813 21,5.5 L21,18.5 C21,19.8807119 19.8807119,21 18.5,21 L15.5,21 C14.1192881,21 13,19.8807119 13,18.5 L13,5.5 C13,4.11928813 14.1192881,3 15.5,3 L18.5,3 Z M18.5,4 L15.5,4 C14.6715729,4 14,4.67157288 14,5.5 L14,18.5 C14,19.3284271 14.6715729,20 15.5,20 L18.5,20 C19.3284271,20 20,19.3284271 20,18.5 L20,5.5 C20,4.67157288 19.3284271,4 18.5,4 Z"></path> </g></svg>
-                250cm <span class="text-gray-500 text-sm font-light">(250dots)</span>
-              </p>
-          </label>
-        </div>
-      </fieldset>
-
-      <div class="mt-6 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 flex-shrink-0">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-        </svg>
-        <p class="ml-2 text-sm text-gray-500">One dot has a diameter of 8mm</p>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-<div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-7 xl:col-start-7 ">
-  <div class="overflow-hidden rounded-lg">
-      <img name="chart" src="" alt="chart" class="object-cover object-center hidden">
-  </div>
-</div>
+<!-- Script -->
 
 <script>
   async function submit() {
@@ -318,7 +269,7 @@
     const SecondStartX = document.getElementsByName('SecondStartX')[0].value = 3
     const SecondStartY = document.getElementsByName('SecondStartY')[0].value = 15
     const SecondEndX = document.getElementsByName('SecondEndX')[0].value = 10
-    const SecondEndY = document.getElementsByName('SecondEndY')[0].value
+    const SecondEndY = document.getElementsByName('SecondEndY')[0].value = 20
 
     const response = await fetch("{{base_url}}/get-chart", {
     method: 'POST',
@@ -346,6 +297,8 @@
    chart.src = `data:image/png;base64, ${response['chart']}`
 
    chart.classList.remove('hidden');
+   document.getElementById("lastSection").classList.remove('hidden')
+   
 
 }
 </script>
