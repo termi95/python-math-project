@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/python-logo.png')}}">
+    <link rel="icon" href="{{url_for('static', filename='assets/python-logo.png')}}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Python - projekt</title>
     <meta name="theme-color" content="#1f2937" />
     {% block head%}{% endblock %}
   </head>
   <body class="h-full">
     {% block body%}{% endblock %}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
