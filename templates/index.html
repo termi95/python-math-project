@@ -241,27 +241,34 @@
           </div>
         </div>
 
-        <!-- do powielania -->
         <div class="mt-10 border-t border-gray-200 pt-10">
           <h3 class="text-md font-medium text-gray-900">Współrzędne odcinków</h3>
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
-              <li>Odcinek pierwszy: </li>
-              <li>Odcinek drugi: </li>
+              <li id="firstline">Odcinek pierwszy: </li>
+              <li id="secondline">Odcinek drugi: </li>
             </ul>
           </div>
         </div>
-        <!-- do powielania -->
+        
+        <div class="mt-10 border-t border-gray-200 pt-10">
+          <h3 class="text-md font-medium text-gray-900">Czy występuje przecięcie odcinków</h3>
+          <div class="prose prose-sm mt-4 text-gray-500">
+            <ul role="list">
+              <li id="isIntersect"></li>
+            </ul>
+          </div>
+        </div>
+        
         <div class="mt-10 border-t border-gray-200 pt-10">
           <h3 class="text-md font-medium text-gray-900">Przecięcie odcinków</h3>
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
               <li>Przecięcię odcików występuje na współrzędnych:</li>
-              <li>32x26 </li>
+              <li id="intersection_point"></li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -307,16 +314,30 @@
       ]
     })
 })
-   .then(response => response.json())
-   .then(response => {return response})
+  .then(response => response.json())
+  .then(response => {return response})
+
+  const chart = document.getElementsByName('chart')[0]
+  chart.src = `data:image/png;base64, ${response['chart']}`
   
-   const chart = document.getElementsByName('chart')[0]
-   chart.src = `data:image/png;base64, ${response['chart']}`
+  chart.classList.remove('hidden');
+  document.getElementById("lastSection").classList.remove('hidden')
+  
+  // czy istnieje jest przecięcie punktu
+  const isIntersect = response.isIntersect
+  document.getElementById("isIntersect").innerHTML = isIntersect ? "tak" : "nie";
 
-   chart.classList.remove('hidden');
-   document.getElementById("lastSection").classList.remove('hidden')
-   
+  // koordynaty przecięcia
+  const intersect = response.intersection_point
+  document.getElementById("intersection_point").innerHTML = `${JSON.stringify(intersect)}`;
 
+  // koordynaty pierwszej linii
+  const firstline = response.line1
+  document.getElementById("firstline").innerHTML = `Odcinek pierwszy: ${JSON.stringify(firstline)}`;
+
+  // koordynaty drugiej linii
+  const secondline = response.line1
+  document.getElementById("secondline").innerHTML = `Odcinek drugi: ${JSON.stringify(secondline)}`;
 }
 </script>
 {% endblock%}
