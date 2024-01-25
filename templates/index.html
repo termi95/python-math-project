@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 {% include 'topbutton.html' %}
+{% include 'notifications.html' %}
 
 <!-- SEKCJA 1 -->
 
@@ -54,15 +55,11 @@
                     import matplotlib.pyplot as plt<br>
                     from model.model import Line, Point<br>
                     import json<br><br>
-                    
-                    
                     def orientation(p: Point, q: Point, r: Point):<br>
                     &emsp;val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y)<br><br>
                     &emsp;if val == 0:<br>
                     &emsp;&emsp;return 0<br>
-                            &emsp;return 1 if val > 0 else 2<br><br>
-                    
-                    
+                    &emsp;return 1 if val > 0 else 2<br><br>
                     def on_segment(p: Point, q: Point, r: Point):<br>
                     &emsp;return (<br>
                     &emsp;&emsp; q.x <= max(p.x, r.x)<br>
@@ -265,7 +262,7 @@
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
               <li>Przecięcię odcików występuje na współrzędnych:</li>
-              <li id="intersection_point"></li>
+              <li id="intersection_point" class="text-center font-semibold my-2"></li>
             </ul>
           </div>
         </div>
@@ -280,20 +277,24 @@
   </div>
 </footer>
 
-
 <!-- Script -->
 
 <script>
   async function submit() {
-    const FirstStartX = document.getElementsByName('FirstStartX')[0].value =1
-    const FirstStartY = document.getElementsByName('FirstStartY')[0].value = 1
-    const FirstEndX = document.getElementsByName('FirstEndX')[0].value = 5
-    const FirstEndY = document.getElementsByName('FirstEndY')[0].value = 20
+    const FirstStartX = document.getElementsByName('FirstStartX')[0].value
+    const FirstStartY = document.getElementsByName('FirstStartY')[0].value
+    const FirstEndX = document.getElementsByName('FirstEndX')[0].value
+    const FirstEndY = document.getElementsByName('FirstEndY')[0].value
 
-    const SecondStartX = document.getElementsByName('SecondStartX')[0].value = 3
-    const SecondStartY = document.getElementsByName('SecondStartY')[0].value = 15
-    const SecondEndX = document.getElementsByName('SecondEndX')[0].value = 10
-    const SecondEndY = document.getElementsByName('SecondEndY')[0].value = 20
+    const SecondStartX = document.getElementsByName('SecondStartX')[0].value
+    const SecondStartY = document.getElementsByName('SecondStartY')[0].value
+    const SecondEndX = document.getElementsByName('SecondEndX')[0].value
+    const SecondEndY = document.getElementsByName('SecondEndY')[0].value
+
+    if (!validateInputs(FirstStartX, FirstStartY, FirstEndX, FirstEndY, SecondStartX, SecondStartY, SecondEndX, SecondEndY)) {
+      showError("Wszystkie pola muszą być wypełnione prawidłowo!");
+      return;
+    }
 
     const response = await fetch("{{base_url}}/get-chart", {
     method: 'POST',
@@ -315,7 +316,6 @@
     })
 })
   .then(response => response.json())
-  .then(response => {return response})
 
   const chart = document.getElementsByName('chart')[0]
   chart.src = `data:image/png;base64, ${response['chart']}`
@@ -328,16 +328,39 @@
   document.getElementById("isIntersect").innerHTML = isIntersect ? "tak" : "nie";
 
   // koordynaty przecięcia
-  const intersect = response.intersection_point
-  document.getElementById("intersection_point").innerHTML = `${JSON.stringify(intersect)}`;
+  if(isIntersect) {
+    const intersect = response.intersection_point
+    const intersectFormatted = `x:${intersect.x}, y:${intersect.y}`;
+    document.getElementById("intersection_point").innerHTML = intersectFormatted;
+  } else {
+    document.getElementById("intersection_point").innerHTML = "Nie stnieje";
+  }
 
   // koordynaty pierwszej linii
-  const firstline = response.line1
-  document.getElementById("firstline").innerHTML = `Odcinek pierwszy: ${JSON.stringify(firstline)}`;
+  const firstline = response.line1;
+  const firstlineFormatted = `<p class="text-center font-semibold my-2">start x:${firstline.start.x} y:${firstline.start.y}, end x:${firstline.end.x} y:${firstline.end.y}</p>`;
+  document.getElementById("firstline").innerHTML = `Odcinek pierwszy: ${firstlineFormatted}`;
 
   // koordynaty drugiej linii
-  const secondline = response.line1
-  document.getElementById("secondline").innerHTML = `Odcinek drugi: ${JSON.stringify(secondline)}`;
+  const secondline = response.line2;
+  const secondlineFormatted = `<p class="text-center font-semibold my-2">start x:${secondline.start.x} y:${secondline.start.y}, end x:${secondline.end.x} y:${secondline.end.y}</p>`;
+  document.getElementById("secondline").innerHTML = `Odcinek drugi: ${secondlineFormatted}`;
 }
+
+function validateInputs(...inputs) {
+  return inputs.every(input => input.trim() !== '');
+}
+
+function showError(errorMessage) {
+    const notificationElement = document.getElementById("notification");
+    const notificationMessageElement = document.getElementById("notification-message");
+
+    notificationMessageElement.innerHTML = errorMessage;
+    notificationElement.classList.remove('hidden');
+
+    notificationElement.addEventListener('animationend', () => {
+      notificationElement.classList.add('hidden');
+      });
+  }
 </script>
 {% endblock%}

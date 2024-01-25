@@ -1,11 +1,8 @@
 from flask import Flask, make_response, render_template, request
-
-
 from model.model import Line, Point
 from services.services import get_chart_with_info
 
 app = Flask(__name__)
-
 
 def is_float(value):
     if value is None:
@@ -20,7 +17,6 @@ def is_float(value):
 @app.route("/")
 def index():
     return render_template("index.html", base_url = base_url)
-
 
 @app.route("/get-chart", methods=["POST"])
 def get_Chart():
@@ -63,7 +59,6 @@ def get_Chart():
         )
 
     return get_chart_with_info(parsed_lines[0], parsed_lines[1])
-
 
 if __name__ == "__main__":
     base_url = "http://127.0.0.1:5000"

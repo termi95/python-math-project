@@ -8,6 +8,31 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Python - projekt</title>
     <meta name="theme-color" content="#1f2937" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+          }
+          25% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 1;
+          }
+          75% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .fade-out {
+          animation: fadeOut 5s ease-in-out;
+        }
+      }
+    </style>
     {% block head%}{% endblock %}
   </head>
   <body class="h-full">
