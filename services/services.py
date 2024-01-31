@@ -107,7 +107,7 @@ def plot_intersection_dot(intersection_point: Point):
         zorder=4,
     )
 
-
+# Generuje wykres
 def get_chart_with_info(line1: Line, line2: Line):
     data = {}
     isIntersect = False

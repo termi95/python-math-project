@@ -330,7 +330,7 @@
   // koordynaty przecięcia
   if(isIntersect) {
     const intersect = response.intersection_point
-    const intersectFormatted = `x:${intersect.x}, y:${intersect.y}`;
+    const intersectFormatted = `x:${Math.round(intersect.x * 100)/100}, y:${Math.round(intersect.y *100)/100}`;
     document.getElementById("intersection_point").innerHTML = intersectFormatted;
   } else {
     document.getElementById("intersection_point").innerHTML = "Nie stnieje";
