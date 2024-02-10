@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 from model.model import Line, Point
 import json
 
-
+# Ta funkcja określa orientację trzech punktów p, q, r na płaszczyźnie.
 def orientation(p: Point, q: Point, r: Point):
     val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y)
     if val == 0:
         return 0
     return 1 if val > 0 else 2
 
-
+# Sprawdza, czy punkt q leży na odcinku pr
 def on_segment(p: Point, q: Point, r: Point):
     return (
         q.x <= max(p.x, r.x)
@@ -22,7 +22,7 @@ def on_segment(p: Point, q: Point, r: Point):
         and q.y >= min(p.y, r.y)
     )
 
-
+# Sprawdza, czy dwa odcinki się przecinają.
 def do_intersect(line1: Line, line2: Line):
     o1 = orientation(line1.start, line1.end, line2.start)
     o2 = orientation(line1.start, line1.end, line2.end)
@@ -45,7 +45,7 @@ def do_intersect(line1: Line, line2: Line):
         return True
 
     return False
-
+# Oblicza punkt przecięcia dwóch odcinków.
 def get_intersection_point(line1: Line, line2: Line):
     p1, q1 = line1.start, line1.end
     p2, q2 = line2.start, line2.end
@@ -78,7 +78,7 @@ def get_intersection_point(line1: Line, line2: Line):
 
     return Point(x, y)
 
-
+# Dodaje odcinek do wykresu.
 def plot_line(line: Line, label: str, isIntersect: bool):
     plt.plot(
         [line.start.x, line.end.x],
@@ -88,7 +88,7 @@ def plot_line(line: Line, label: str, isIntersect: bool):
         linewidth=1.5 if isIntersect else 1,
     )
 
-
+# Dodaje punkt przecięcia do wykresu.
 def plot_intersection_dot(intersection_point: Point):
     print(type(intersection_point))
     plt.plot(
@@ -99,7 +99,8 @@ def plot_intersection_dot(intersection_point: Point):
         label="Przecięcie",
         zorder=4,
     )
-
+    
+# Dodaje odcinek przecięcia do wykresu.
 def plot_intersection_line(intersection_line: Line):
     plt.plot(
         [intersection_line.start.x, intersection_line.end.x],
@@ -109,7 +110,7 @@ def plot_intersection_line(intersection_line: Line):
         label="wpólny odcinek",
         zorder=4,
     )
-    
+# Oblicza odcinek przecięcia dwóch odcinków.
 def get_intersection_line(line1:Line, line2:Line):
     start_x = max(line1.start.x, line2.start.x)
     end_x = min(line1.end.x, line2.end.x)
@@ -122,7 +123,7 @@ def get_intersection_line(line1:Line, line2:Line):
         return Line(Point(start_x,start_y),Point(end_x,end_y))
         
 
-# Generuje wykres
+# Funkcja generująca wykres
 def get_chart_with_info(line1: Line, line2: Line):
     data = {}
     isIntersect = False
