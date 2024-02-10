@@ -329,9 +329,17 @@
 
   // koordynaty przecięcia
   if(isIntersect) {
-    const intersect = response.intersection_point
-    const intersectFormatted = `x:${Math.round(intersect.x * 100)/100}, y:${Math.round(intersect.y *100)/100}`;
-    document.getElementById("intersection_point").innerHTML = intersectFormatted;
+    if(response.intersection_point){
+      const intersect = response.intersection_point
+      const intersectFormatted = `x:${Math.round(intersect.x * 100)/100}, y:${Math.round(intersect.y *100)/100}`;
+      document.getElementById("intersection_point").innerHTML = intersectFormatted;
+    }
+    else if(response.intersection_line){
+      const line = response.intersection_line
+      const lineFormatted = `start x:${Math.round(line.start.x * 100)/100},  start y:${Math.round(line.start.y *100)/100} <br>
+                                        end x:${Math.round(line.end.x * 100)/100},  end y:${Math.round(line.end.y *100)/100}`;
+      document.getElementById("intersection_point").innerHTML = lineFormatted;
+    }
   } else {
     document.getElementById("intersection_point").innerHTML = "Nie stnieje";
   }

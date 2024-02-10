@@ -46,14 +46,6 @@ def do_intersect(line1: Line, line2: Line):
 
     return False
 
-
-def is_point_inside_line(point, line):
-    cross_product = (point.y - line.start.y) * (line.end.x - line.start.x) - (
-        point.x - line.start.x
-    ) * (line.end.y - line.start.y)
-    return abs(cross_product) < 1e-8
-
-
 def get_intersection_point(line1: Line, line2: Line):
     p1, q1 = line1.start, line1.end
     p2, q2 = line2.start, line2.end
@@ -98,6 +90,7 @@ def plot_line(line: Line, label: str, isIntersect: bool):
 
 
 def plot_intersection_dot(intersection_point: Point):
+    print(type(intersection_point))
     plt.plot(
         intersection_point.x,
         intersection_point.y,
@@ -107,17 +100,46 @@ def plot_intersection_dot(intersection_point: Point):
         zorder=4,
     )
 
+def plot_intersection_line(intersection_line: Line):
+    plt.plot(
+        [intersection_line.start.x, intersection_line.end.x],
+        [intersection_line.start.y, intersection_line.end.y],
+        marker="o",
+        color="red",
+        label="wpólny odcinek",
+        zorder=4,
+    )
+    
+def get_intersection_line(line1:Line, line2:Line):
+    start_x = max(line1.start.x, line2.start.x)
+    end_x = min(line1.end.x, line2.end.x)
+    
+    start_y = max(line1.start.y, line2.start.y)
+    end_y = min(line1.end.y, line2.end.y)
+    if start_x >= end_x or start_y >= end_y:
+        return None
+    else:
+        return Line(Point(start_x,start_y),Point(end_x,end_y))
+        
+
 # Generuje wykres
 def get_chart_with_info(line1: Line, line2: Line):
     data = {}
     isIntersect = False
+    intersection_point = None
+    intersection_line = None
     plt.figure()
     if do_intersect(line1, line2):
         isIntersect = True
         intersection_point = get_intersection_point(line1, line2)
-        if intersection_point != None:
+        intersection_line = get_intersection_line(line1, line2)
+        print(intersection_point)
+        print(intersection_line)
+        if intersection_point != None and intersection_line == None:
             plot_intersection_dot(intersection_point)
-
+        
+        if intersection_line != None:
+            plot_intersection_line(intersection_line)
     plot_line(line1, "Odcinek 1", isIntersect)
     plot_line(line2, "Odcinek 2", isIntersect)
 
@@ -132,7 +154,10 @@ def get_chart_with_info(line1: Line, line2: Line):
     chart = base64.b64encode(my_stringIObytes.read()).decode()
     data["line1"] = line1.get_line_as_json()
     data["line2"] = line2.get_line_as_json()
-    data["isIntersect"] = isIntersect 
-    data["intersection_point"] = intersection_point if intersection_point == None else intersection_point.get_point_as_json()
+    data["isIntersect"] = isIntersect
+    if intersection_point != None and intersection_line == None:       
+        data["intersection_point"] =  intersection_point.get_point_as_json()
+    if intersection_line != None:
+         data["intersection_line"] = intersection_line.get_line_as_json()
     data["chart"] = chart
     return json.dumps(data)
