@@ -90,7 +90,6 @@ def plot_line(line: Line, label: str, isIntersect: bool):
 
 # Dodaje punkt przecięcia do wykresu.
 def plot_intersection_dot(intersection_point: Point):
-    print(type(intersection_point))
     plt.plot(
         intersection_point.x,
         intersection_point.y,
@@ -110,19 +109,47 @@ def plot_intersection_line(intersection_line: Line):
         label="wpólny odcinek",
         zorder=4,
     )
+    
+def is_point_on_the_segment(punkt1:Point, punkt2:Point, punkt:Point):
+    # Sprawdzenie, czy punkt leży na odcinku o końcach punkt1 i punkt2
+    
+    # Współrzędne punktów
+    x1 = punkt1.x
+    y1 = punkt1.y
+    x2 = punkt2.x
+    y2 = punkt2.y
+    x = punkt.x
+    y = punkt.y
+    
+    # Sprawdzenie czy punkt leży na tej samej prostej co odcinek punkt1 - punkt2
+    if (y - y1) * (x2 - x1) == (y2 - y1) * (x - x1):
+        # Sprawdzenie czy współrzędne x i y leżą pomiędzy końcami odcinka
+        if min(x1, x2) <= x <= max(x1, x2) and min(y1, y2) <= y <= max(y1, y2):
+            return True
+    return False 
+ 
 # Oblicza odcinek przecięcia dwóch odcinków.
 def get_intersection_line(line1:Line, line2:Line):
     start_x = max(line1.start.x, line2.start.x)
     end_x = min(line1.end.x, line2.end.x)
     
-    start_y = max(line1.start.y, line2.start.y)
+    start_y = min(line1.start.y, line2.start.y)
+    if not (on_segment(line1.start,Point(start_x,start_y), line1.end)) or not on_segment(line2.start,Point(start_x,start_y), line2.end):
+        start_y = max(line1.start.y, line2.start.y)    
+    
     end_y = min(line1.end.y, line2.end.y)
-    if start_x >= end_x or start_y >= end_y:
-        return None
-    else:
-        return Line(Point(start_x,start_y),Point(end_x,end_y))
+    if not (on_segment(line1.start,Point(end_x,end_y), line1.end)) or not on_segment(line2.start,Point(end_x,end_y), line2.end):
+        end_y = max(line1.end.y, line2.end.y)
         
-
+    if is_point_on_the_segment(line1.start, line1.end, Point(start_x,start_y)) and is_point_on_the_segment(line2.start, line2.end, Point(end_x,end_y)):
+        line = Line(Point(start_x,start_y),Point(end_x,end_y))
+        if ((line.end.x - line.start.x == 0) and (line.end.y - line.start.y == 0)):
+            return None
+        else:
+            return Line(Point(start_x,start_y),Point(end_x,end_y))
+    else:
+        return None
+    
 # Funkcja generująca wykres
 def get_chart_with_info(line1: Line, line2: Line):
     data = {}
@@ -134,8 +161,6 @@ def get_chart_with_info(line1: Line, line2: Line):
         isIntersect = True
         intersection_point = get_intersection_point(line1, line2)
         intersection_line = get_intersection_line(line1, line2)
-        print(intersection_point)
-        print(intersection_line)
         if intersection_point != None and intersection_line == None:
             plot_intersection_dot(intersection_point)
         
