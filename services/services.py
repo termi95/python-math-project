@@ -140,8 +140,11 @@ def get_intersection_line(line1:Line, line2:Line):
     end_y = min(line1.end.y, line2.end.y)
     if not (on_segment(line1.start,Point(end_x,end_y), line1.end)) or not on_segment(line2.start,Point(end_x,end_y), line2.end):
         end_y = max(line1.end.y, line2.end.y)
-        
-    if is_point_on_the_segment(line1.start, line1.end, Point(start_x,start_y)) and is_point_on_the_segment(line2.start, line2.end, Point(end_x,end_y)):
+    
+    if (is_point_on_the_segment(line1.start, line1.end, Point(start_x,start_y)) 
+        and is_point_on_the_segment(line1.start, line1.end, Point(end_x,end_y)) 
+        and is_point_on_the_segment(line2.start, line2.end, Point(end_x,end_y)) 
+        and is_point_on_the_segment(line2.start, line2.end, Point(start_x,start_y))):
         line = Line(Point(start_x,start_y),Point(end_x,end_y))
         if ((line.end.x - line.start.x == 0) and (line.end.y - line.start.y == 0)):
             return None
